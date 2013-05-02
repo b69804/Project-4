@@ -5,15 +5,11 @@
 
 var myLibrary = function(){
     
-    // Check Numeric Function
-    var checkNumeric = function(val){
-        
-        if (isNan(val)){
-            return false;
-        } else {
-            return true;
-        }
+    // Turn String into Number
+    var stringIntoNumber = function(str){
+        return parseFloat(str)
     }
+    
     // Email Pattern check
     var checkEmailAddress = function(str){
         if (str = "/^\(?(\d{})\)?[@ ]?(\d{})[. ]?(\d{})$/"){
@@ -22,6 +18,7 @@ var myLibrary = function(){
             return false;
             }
     }
+    
     // Check Phone Number Pattern
     var checkPhoneNumber = function(str){
         if (str = "/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/"){
@@ -37,20 +34,26 @@ var myLibrary = function(){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
 
+    // Round numbers to specific
+    var roundNumber = function(num, val){
+        return num.toFixed(val);
+    }
+    
+    
+    
     return {
-        "checkNumeric": checkNumeric,
+        "stringIntoNumber": stringIntoNumber,
         "checkEmailAddress": checkEmailAddress,
         "checkPhoneNumber": checkPhoneNumber,
-        "titleString": titleString
+        "titleString": titleString,
+        "roundNumber": roundNumber
     }
 }
 
 var newLib = new myLibrary();
 
-var myString = "123-456";
-
-
+console.log( + newLib.stringIntoNumber("42"));
 console.log("My Name is " + newLib.titleString("matt ashton"));
 console.log("Is 239-691-3090 a phone number? "+ newLib.checkPhoneNumber("239-691-3090"));
 console.log("Is mashton237@fullsail.com an email address? " + newLib.checkEmailAddress("mashton237@fullsail.com"));
-
+console.log( + newLib.roundNumber(3.145653, 2));
