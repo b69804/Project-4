@@ -49,19 +49,21 @@ var myLibrary = function(){
         }
     }
  return total;
-}     
+}
+   
     return {
         "stringIntoNumber": stringIntoNumber,
         "checkEmailAddress": checkEmailAddress,
         "checkPhoneNumber": checkPhoneNumber,
         "titleString": titleString,
         "roundNumber": roundNumber,
-        "arrayAdding": arrayAdding
+        "arrayAdding": arrayAdding,
     }
 }
 
 var newLib = new myLibrary();
-var array = [3, 4, "yup", 5]
+var array = [3, 4, "yup", 5];
+
 
 console.log( + newLib.stringIntoNumber("42"));
 console.log("My Name is " + newLib.titleString("matt ashton"));
@@ -69,3 +71,5 @@ console.log("Is 239-691-3090 a phone number? "+ newLib.checkPhoneNumber("239-691
 console.log("Is mashton237@fullsail.com an email address? " + newLib.checkEmailAddress("mashton237@fullsail.com"));
 console.log( + newLib.roundNumber(3.145653, 2));
 console.log( + newLib.arrayAdding([array]));
+
+
